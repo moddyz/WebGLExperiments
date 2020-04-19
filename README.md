@@ -2,4 +2,4 @@
 
 Experiments with WebGL.
 
-[Hosted by Github Pages](https://moddyz.github.io/WebGLExperiments/).
+[Hosted by GitHub Pages](https://moddyz.github.io/WebGLExperiments/).
