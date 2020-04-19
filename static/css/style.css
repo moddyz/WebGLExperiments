@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+html, body {
+    font-family: "OpenSans-Light", "OpenSans-Regular", serif;
+    font-weight: lighter;
+    color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "OpenSans-Regular", serif;
+}
+
+a {
+    text-decoration: none;
+    color: #277;
+}
+
+ul {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+.title {
+    font-size: 36pt;
+    font-weight: bold;
+}
+
+.lead {
+    font-size: 18pt;
+}
+
+.tooltip {
+    position: absolute;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: white;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+}
+
+.primary {
+    color: #0095EE;
+}
+
+.experiment {
+    margin-top: 15px;
+}
+
+#content {
+    margin-top: 15px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.line {
+    height: 1px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #DDD;
+}

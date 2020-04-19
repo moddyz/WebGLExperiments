@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link href="static/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class='container'>
+            <h1 class='title'>WebGL Experiments</h1>
+            <div class="line"></div>
+            <div>A collection of experiments with WebGL.</div>
+            <div id='experiments'>
+{% for experiment in context.experiments %}
+                <div class='experiment'>
+                    <a href="experiments/{{ experiment.name }}">{{ experiment.title }}</a>
+                </div>
+{% endfor %}
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="footer">
+            <p>&#169; 2016-2020</p>
+            <a href="https://www.github.com/moddyz">moddyz @ github</a>
+        </div>
+    </body>
+</html>
