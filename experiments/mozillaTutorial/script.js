@@ -19,9 +19,32 @@ function main() {
   // Here's where we call the routine that builds all the objects we'll be
   // drawing.
   const buffers = initBuffers(gl);
+  
+  // Scene state.
+  var sceneState = {
+    deltaTime: 0.0,
+    squareRotation: 0.0,
+  };
+  
+  // Render loop.
+  var previousTime = 0;
+  function render(currentTime) {
+    // Compute time delta.
+    currentTime *= 0.001;  // Convert to seconds
+    sceneState.deltaTime = currentTime - previousTime;
+    previousTime = currentTime;
 
-  // Draw the scene
-  drawScene(gl, programInfo, buffers);
+    // Update scene state.
+    sceneState.squareRotation += sceneState.deltaTime;
+
+    // Draw the scene
+    drawScene(gl, programInfo, buffers, sceneState);
+
+    // Request
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
 }
 
 function initShaderPrograms(gl) {
@@ -124,7 +147,7 @@ function initBuffers(gl) {
 //
 // Draw the scene.
 //
-function drawScene(gl, programInfo, buffers) {
+function drawScene(gl, programInfo, buffers, sceneState) {
   gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Clear to black, fully opaque
   gl.clearDepth(1.0);                 // Clear everything
   gl.enable(gl.DEPTH_TEST);           // Enable depth testing
@@ -162,6 +185,12 @@ function drawScene(gl, programInfo, buffers) {
       modelViewMatrix,     // destination matrix
       modelViewMatrix,     // matrix to translate
       [-0.0, 0.0, -6.0]);  // amount to translate
+
+  mat4.rotate(
+      modelViewMatrix,  // destination matrix
+      modelViewMatrix,  // matrix to rotate
+      sceneState.squareRotation,   // amount to rotate in radians
+      [0, 0, 1]);
 
   // Tell WebGL how to pull out the positions from the position
   // buffer into the vertexPosition attribute.
