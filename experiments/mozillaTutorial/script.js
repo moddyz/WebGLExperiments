@@ -346,7 +346,7 @@ function initBuffers(gl) {
 
   return {
     position: positionBuffer,
-    textureCoordinates: textureCoordBuffer,
+    textureCoord: textureCoordBuffer,
     indices: indexBuffer,
   };
 }
